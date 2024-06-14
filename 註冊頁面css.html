@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<body>
+<head>
+<style>
+ body {
+            background-color: powderblue;
+            display: flex;
+         justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            flex-direction: column;
+        }
+        h1 {
+            color: blue;
+            text-align: center;
+             margin: -10px;
+        }
+form {
+            border: 5px solid powderblue;
+            margin: 40px;
+            padding: 20px;
+            background-color: white;
+            border-radius: 10px;
+    
+      }
+</style>
+</head>
+<title>註冊表單</title>
+<h1><b>註冊表單</b></h1>
+<form>
+  <label for="name"><p style="color:green;"> 姓名:<br>
+  <input type="text" id="name" name="name"><br>
+   <label for="gender"><p style="color: green;">性別:
+    <select id="gender" name="gender">
+        <option value="男">男</option>
+        <option value="女">女</option>
+        <option value="秘密">秘密</option>
+    </select><br>
+     <label for="blood"><p style="color: green;">血型:
+    <select id="blood" name="blood">
+        <option value="A">A型</option>
+        <option value="B">B型</option>
+        <option value="O">O型</option>
+        <option value="AB">AB型</option> 
+    </select><br>
+  <label for="favcolor">喜歡的顏色:</label><br>
+  <input type="color" id="favcolor" name="favcolor"><br>
+  <label for="birthday">生日(年/月/日):</label><br>
+  <input type="date" id="birthday" name="birthday"><br>
+  <label for="email">email:</label><br>
+  <input type="email" id="email" name="email"><br>
+  <label for="myfile">附件:</label><br>
+  <input type="file" id="myfile" name="myfile"><br>
+  <label for="textarea">自我介紹:</label><br>
+  <textarea id="textarea" id="intro"></textarea><br>
+  <input type="submit" value="提交">
+
+</form>
+</body>
+</html>
+
