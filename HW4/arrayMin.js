@@ -1,9 +1,9 @@
-function arrayMin(n)
+function arrayMin(a)
 {
-    let i,min=n[0];
-    for (i=1 ; i<n.length ; i++)
+    let i,min=a[0];
+    for (i=1 ; i<a.length ; i++)
     {
-        if (n[i]<min) min=n[i];
+        if (a[i]<min) min=a[i];
     }
 
     console.log(min);
