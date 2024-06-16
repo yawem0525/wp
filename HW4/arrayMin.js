@@ -9,5 +9,5 @@ function arrayMin(n)
     console.log(min);
 }
 
-arrayMin([1,2,3,4,5]);
-arrayMin([25,17,67,47,99]);
+arrayMin([5,6,7,8,9]);
+arrayMin([22,31,47,87,54]);
