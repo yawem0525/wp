@@ -11,7 +11,7 @@
   </style>
 </head>
 <body>
-  <button class="resize-button" onclick="resizeButton(this)">click me!!!</button>
+  <button class="resize-button" onclick="resizeButton(this)">click me !!!</button>
 
   <script>
 
