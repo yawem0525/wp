@@ -30,6 +30,16 @@
             const y = Math.random() * (window.innerHeight - button.offsetHeight);
             button.style.transform = `translate(${x}px, ${y}px)`;
         }
+        function updateScore() {
+            score++;
+            button.textContent = `click`;
+            scoreTitle.textContent = `分數: ${score}`;
+            if (score % 5 === 0 && moveInterval > 200) {
+                moveInterval -= 200; // 每5分減少移動間隔時間
+                clearInterval(moveIntervalId);
+                moveIntervalId = setInterval(moveButton, moveInterval);
+            }
+        }
 
         function updateScore() {
             score++;
@@ -41,8 +51,7 @@
             button.style.display = 'none';
             setTimeout(() => {
                 button.style.display = 'block';
-                moveButton();
-            }, 3000); // 3秒後再次顯示按鈕並移動
+                moveButton();}, 3000); 
             updateScore();
         });
 
