@@ -1,9 +1,4 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Moving Button</title>
     <style>
         #movingButton {
             position: absolute;
@@ -15,7 +10,7 @@
             transition: transform 0.5s;
         }
     </style>
-</head>
+
 <body>
     <h1 id="scoreTitle">分數: 0</h1>
     <button id="movingButton">click</button>
@@ -34,11 +29,13 @@
             score++;
             button.textContent = `click`;
             scoreTitle.textContent = `分數: ${score}`;
-            if (score % 5 === 0 && moveInterval > 200) {
-                moveInterval -= 200; // 每5分減少移動間隔時間
+          
+             if (moveInterval > 0) { 
+                moveInterval -= 50;
                 clearInterval(moveIntervalId);
                 moveIntervalId = setInterval(moveButton, moveInterval);
             }
+
         }
 
         function updateScore() {
