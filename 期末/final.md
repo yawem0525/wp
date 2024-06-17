@@ -15,8 +15,13 @@
     參考老師給的程式碼，看懂了寫的，也有參考chatgpt，也有參考同學的
   * [HW3](https://github.com/yawem0525/wp/tree/master/HW3)
 ### 作業四 JavaScript練習2
-   1、2參考老師和chatgpt，第5、8是複製chatgpt
+    1、2參考老師和chatgpt，第5、8是複製chatgpt
   * [HW4](https://github.com/yawem0525/wp/tree/master/HW4)
 ### 作業五 DOM的JavaScript操縱練習
-   都是參考chatgpt
-  * [HW4](https://github.com/yawem0525/wp/tree/master/HW4)
+    都是參考chatgpt，自己調按鈕大小
+  * [原始碼](https://github.com/yawem0525/wp/tree/master/HW5)
+#### 網頁
+  * [變大](https://htmlpreview.github.io/?https://github.com/yawem0525/wp/blob/master/HW5/big.js)
+  * [向右](https://htmlpreview.github.io/?https://github.com/yawem0525/wp/blob/master/HW5/%E5%8F%B3%E7%A7%BB.js)
+  * [隨機移動](https://htmlpreview.github.io/?https://github.com/yawem0525/wp/blob/master/HW5/move.js)
+
