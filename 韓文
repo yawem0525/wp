@@ -7,108 +7,105 @@
     <style>
         body {
             font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f9f9f9;
+            background-color: #f8f9fa;
+            margin: 20px;
         }
-        header {
-            background-color: #4CAF50;
-            color: white;
-            text-align: center;
-            padding: 1rem 0;
-        }
-        main {
-            max-width: 800px;
-            margin: 20px auto;
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
             padding: 20px;
             background: white;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
             border-radius: 8px;
         }
-        h1, h2 {
+        h1 {
             text-align: center;
+            color: #007bff;
         }
-        .word {
-            font-size: 1.2rem;
+        .question {
+            margin: 20px 0;
+        }
+        .question h3 {
+            font-size: 18px;
             margin-bottom: 10px;
-            font-weight: bold;
         }
-        textarea {
-            width: 100%;
-            height: 100px;
-            font-size: 1rem;
-            padding: 10px;
-            margin-bottom: 15px;
-            border: 1px solid #ddd;
-            border-radius: 5px;
+        .options {
+            list-style-type: none;
+            padding: 0;
+        }
+        .options li {
+            margin: 10px 0;
         }
         button {
-            background-color: #4CAF50;
+            display: block;
+            margin: 20px auto;
+            padding: 10px 20px;
+            font-size: 16px;
+            background-color: #007bff;
             color: white;
             border: none;
-            padding: 10px 20px;
-            font-size: 1rem;
-            border-radius: 5px;
+            border-radius: 4px;
             cursor: pointer;
         }
         button:hover {
-            background-color: #45a049;
+            background-color: #0056b3;
         }
-        .answer {
+        .result {
+            text-align: center;
             margin-top: 20px;
-            font-size: 1rem;
-            color: #333;
-            padding: 10px;
-            background-color: #f1f1f1;
-            border: 1px solid #ddd;
-            border-radius: 5px;
-            display: none;
+            font-size: 18px;
         }
     </style>
 </head>
 <body>
-    <header>
+    <div class="container">
         <h1>TOPIK 必考 200 字 練習</h1>
-    </header>
-    <main>
-        <h2>填寫韓文單字的正確意思</h2>
-        <div class="exercise">
-            <div class="word">1. 가빠 (가방)</div>
-            <textarea id="answer1" placeholder="請輸入答案..."></textarea>
-
-            <div class="word">2. 하나 (하나)</div>
-            <textarea id="answer2" placeholder="請輸入答案..."></textarea>
-
-            <div class="word">3. 방위 (방위)</div>
-            <textarea id="answer3" placeholder="請輸入答案..."></textarea>
-
-            <button onclick="checkAnswers()">提交答案</button>
-            <div id="result" class="answer"></div>
-        </div>
-    </main>
+        <form id="quiz-form">
+            <div class="question">
+                <h3>1. "학교에 갑니다"의 뜻은 무엇입니까?</h3>
+                <ul class="options">
+                    <li><label><input type="radio" name="q1" value="1"> 我回家了。</label></li>
+                    <li><label><input type="radio" name="q1" value="2"> 我去學校。</label></li>
+                    <li><label><input type="radio" name="q1" value="3"> 我去市場。</label></li>
+                    <li><label><input type="radio" name="q1" value="4"> 我在學校。</label></li>
+                </ul>
+            </div>
+            <div class="question">
+                <h3>2. "밥을 먹습니다"의 뜻은 무엇입니까?</h3>
+                <ul class="options">
+                    <li><label><input type="radio" name="q2" value="1"> 我在睡覺。</label></li>
+                    <li><label><input type="radio" name="q2" value="2"> 我吃飯。</label></li>
+                    <li><label><input type="radio" name="q2" value="3"> 我去工作。</label></li>
+                    <li><label><input type="radio" name="q2" value="4"> 我在看書。</label></li>
+                </ul>
+            </div>
+            <button type="button" onclick="checkAnswers()">提交答案</button>
+        </form>
+        <div class="result" id="result"></div>
+    </div>
 
     <script>
         function checkAnswers() {
-            const correctAnswers = ["包包", "一", "方位"];
-            const userAnswers = [
-                document.getElementById("answer1").value.trim(),
-                document.getElementById("answer2").value.trim(),
-                document.getElementById("answer3").value.trim()
-            ];
+            // 正確答案
+            const answers = {
+                q1: "2",
+                q2: "2"
+            };
 
-            let result = "";
+            let score = 0;
+            const form = document.getElementById('quiz-form');
+            const resultDiv = document.getElementById('result');
 
-            userAnswers.forEach((answer, index) => {
-                if (answer === correctAnswers[index]) {
-                    result += `<p><strong>${index + 1}. 正確</strong></p>`;
-                } else {
-                    result += `<p><strong>${index + 1}. 錯誤</strong>，正確答案是：${correctAnswers[index]}</p>`;
+            for (let question in answers) {
+                const userAnswer = form[question].value;
+                if (userAnswer === answers[question]) {
+                    score++;
                 }
-            });
+            }
 
-            document.getElementById("result").innerHTML = result;
-            document.getElementById("result").style.display = "block";
+            resultDiv.textContent = `你答對了 ${score} / ${Object.keys(answers).length} 題！`;
         }
     </script>
 </body>
 </html>
+
